@@ -1,0 +1,15 @@
+    emojis
+    
+    <p>
+        Vamos adicionar alguns emoji:
+        &#x1F596;
+        &#x1F913;
+    </p>
+
+
+    favicon
+        <link rel="shortcut icon" href="Horus.ico" type="image/x-icon">
+
+    
+    css externo
+        <link rel="stylesheet" href="style.css">
