@@ -1,15 +1,18 @@
-let array = [];
+const dataI = new Date()
 
-for (let i = 0; i < 9; i++) array[i] = i
+function temporizador(data) {
 
-const shuffleArray = array => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array
+    setInterval(() => {
+        const dataC = new Date()
+        const lag = (dataC - dataI) / 1000
+
+        var dateX = new Date(null);
+        dateX.setSeconds(lag); // specify value for SECONDS here
+        var result = dateX.toISOString().substring(11, 8);
+
+        console.log(dataI, dataC, lag, result)
+    }, 1000)
 }
 
-array = shuffleArray(array)
+temporizador(dataI)
+

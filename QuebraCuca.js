@@ -34,6 +34,7 @@ function checkTerminou() {
 
     if (cheCkfinal == '1,2,3,4,5,6,7,8, ') {
             document.getElementById("msg").innerHTML = `Parabéns, você terminou!!!`
+            clearInterval(myInterval)
     }
 }
 
@@ -67,3 +68,23 @@ function moveNumber(cel) {
         }
     }
 }
+
+const dataI = new Date()
+
+function temporizador(data) {
+
+    myInterval = setInterval(() => {
+        const dataC = new Date()
+        const lag = (dataC - dataI) / 1000
+
+        var dateX = new Date(null);
+        dateX.setSeconds(lag); // specify value for SECONDS here
+        var result = dateX.toISOString().substring(11, 19);
+
+        document.getElementById("Tempor").innerHTML = result
+        // console.log(dataI, dataC, lag, result)
+        // console.log(result)
+    }, 1000)
+}
+
+temporizador(dataI)
