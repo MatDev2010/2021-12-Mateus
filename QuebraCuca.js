@@ -1,3 +1,4 @@
+let contador = 0
 const points = [1, 2, 3, 4, 5, 6, 7, 8, 0].sort(function (a, b) { return 0.5 - Math.random() });
 // const points = [1, 2, 3, 4, 5, 6, 7, 0, 8]
 
@@ -39,6 +40,9 @@ function checkTerminou() {
 }
 
 function moveNumber(cel) {
+    contador++
+    document.getElementById("Contador").innerHTML = contador;
+
     loc = Number(cel[1])
 
     arrayDeTestes = []
@@ -69,7 +73,7 @@ function moveNumber(cel) {
     }
 }
 
-const dataI = new Date()
+let dataI = new Date()
 
 function temporizador(data) {
 
@@ -87,4 +91,7 @@ function temporizador(data) {
     }, 1000)
 }
 
-temporizador(dataI)
+function iniciar() {
+    let dataI = new Date()
+    temporizador(dataI)
+}
